@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aze I. Denamarca — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030704;
+      --surface: #0a120d;
+      --surface-hover: #0f1c14;
+      --text-primary: #e2fbe8;
+      --text-secondary: #749c81;
+      --border: #14301d;
+      --accent: #22c55e;
+      --accent-glow: rgba(34, 197, 94, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo, .terminal-prompt {
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .nav-wrapper {
+      position: fixed;
+      top: 1.5rem;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+
+    nav {
+      background: rgba(10, 18, 13, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+         {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+ {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+ {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+     {
+      color: var(--accent);
+    }
+
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+   
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 8rem;
+    }
+ {
+      max-width: 750px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 span {
+      color: var(--text-secondary);
+    }
+
+    .hero-content p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-green {
+      background: var(--accent);
+      color: #030704;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .btn-green:hover {
+      background: #1eb354;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+      .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-primary);
+    }
+                 {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .skills-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+    }
+
+    .skills-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag-cloud span {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+      color: var(--text-primary);
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-action {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      font-family: 'Share Tech Mono', monospace;
+      padding: 0;
+    }
+
+    .project-action:hover {
+      text-decoration: underline;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(3, 7, 4, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .modal-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .modal-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+    }
+
+    .contact-container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-container h2 {
+      font-size: 2.2rem;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-container p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrapper">
+    <nav>
+      <a href="#home" class="logo">&gt; Scroll to top</a>
+      <ul class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <section id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>IT1R14 RULEZ</div>
+        <h1>Aze Denamarca</h1>
+        <h1><span>Cybersecurity Penetration tester</span></h1>
+        <p>
+          Constructing secure, high-performance digital environments, backend architectures, and clean code solutions from the ground up.
+        </p>
+        <div class="btn-group">
+          <a href="#projects" class="btn btn-green">View Projects</a>
+          <button class="btn btn-outline" onclick="openModal()">Initialize Contact</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title"Ace | Cybersecurity Professional & Penetration Tester"</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+           Analytical and meticulous Ethical Hacker specializing in offensive security, vulnerability assessment, and adversary simulation. Driven by a passion for uncovering hidden security flaws, I proactively audit network infrastructures, web applications, and cloud environments to neutralize threats before they can be exploited.          </p>
+          <p>
+           By combining deep technical expertise in network protocols with custom automation scripting, I streamline the enumeration and exploitation phases to deliver precise, high-impact results. I bridge the gap between technical vulnerability findings and corporate strategy, transforming complex exploit paths into clear, actionable remediation roadmaps that harden enterprise defenses.
+          </p>
+        </div>
+        <div class="skills-box">
+          <h3>// Tech Stack</h3>
+          <div class="tag-cloud">
+            <span>Windows/Active Directory:</span>
+            <span>Linux</span>
+            <span>DNS</span>
+            <span>Python</span>
+            <span>Bash</span>
+            <span>PowerShell</span>
+            <span>Metasploit</span>
+            <span>Wireshark</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">PROJECTS</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <h3>Penetration Testing Report & Remediation Roadmap - JALIA Inc.</h3>
+            <p>Simulate a real-world adversary attack sequence to evaluate perimeter security, internal network routing, and host-level vulnerabilities before malicious actors exploit them.ts.</p>
+          </div>
+          <button class="project-action" onclick="openModal()">Inspect Details &rarr;</button>
+        </div>
+        <div class="project-card">
+          <div>
+            <h3>Project Beta</h3>
+            <p>An interactive data management workspace built with minimal design principles and high-speed performance.</p>
+          </div>
+          <button class="project-action" onclick="openModal()">Inspect Details &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" style="border-bottom: none;">
+    <div class="container">
+      <div class="contact-container">
+        <h2>CONTACTS</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aze I. Denamarca — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030704;
+      --surface: #0a120d;
+      --surface-hover: #0f1c14;
+      --text-primary: #e2fbe8;
+      --text-secondary: #749c81;
+      --border: #14301d;
+      --accent: #22c55e;
+      --accent-glow: rgba(34, 197, 94, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo, .terminal-prompt {
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .nav-wrapper {
+      position: fixed;
+      top: 1.5rem;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+
+    nav {
+      background: rgba(10, 18, 13, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 8rem;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 span {
+      color: var(--text-secondary);
+    }
+
+    .hero-content p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-green {
+      background: var(--accent);
+      color: #030704;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .btn-green:hover {
+      background: #1eb354;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+      .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-primary);
+    }
+                 {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .skills-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+    }
+
+    .skills-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag-cloud span {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+      color: var(--text-primary);
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-action {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      font-family: 'Share Tech Mono', monospace;
+      padding: 0;
+    }
+
+    .project-action:hover {
+      text-decoration: underline;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(3, 7, 4, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .modal-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .modal-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+    }
+
+ 
+    .contact-container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-container h2 {
+      font-size: 2.2rem;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-container p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrapper">
+    <nav>
+      <a href="#home" class="logo">&gt; aze.denamarca</a>
+      <ul class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <section id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>IT1R14 RULEZ</div>
+        <h1>Aze Denamarca</h1>
+        <h1><span>Cybersecurity Penetration tester</span></h1>
+        <p>
+          Constructing secure, high-performance digital environments, backend architectures, and clean code solutions from the ground up.
+        </p>
+        <div class="btn-group">
+          <a href="#projects" class="btn btn-green">View Projects</a>
+          <button class="btn btn-outline" onclick="openModal()">Initialize Contact</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title"Ace | Cybersecurity Professional & Penetration Tester"</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+           Analytical and meticulous Ethical Hacker specializing in offensive security, vulnerability assessment, and adversary simulation. Driven by a passion for uncovering hidden security flaws, I proactively audit network infrastructures, web applications, and cloud environments to neutralize threats before they can be exploited.          </p>
+          <p>
+           By combining deep technical expertise in network protocols with custom automation scripting, I streamline the enumeration and exploitation phases to deliver precise, high-impact results. I bridge the gap between technical vulnerability findings and corporate strategy, transforming complex exploit paths into clear, actionable remediation roadmaps that harden enterprise defenses.
+          </p>
+        </div>
+        <div class="skills-box">
+          <h3>// Tech Stack</h3>
+          <div class="tag-cloud">
+            <span>Windows/Active Directory:</span>
+            <span>Linux</span>
+            <span>DNS</span>
+            <span>Python</span>
+            <span>Bash</span>
+            <span>PowerShell</span>
+            <span>Metasploit</span>
+            <span>Wireshark</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">PROJECTS</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <h3>Penetration Testing Report & Remediation Roadmap - JALIA Inc.</h3>
+            <p>Simulate a real-world adversary attack sequence to evaluate perimeter security, internal network routing, and host-level vulnerabilities before malicious actors exploit them.ts.</p>
+          </div>
+          <button class="project-action" onclick="openModal()">Inspect Details &rarr;</button>
+        </div>
+        <div class="project-card">
+          <div>
+            <h3>Defensive Log Parser for Agora Industries</h3>
+            <p>An iA lightweight log analysis engine that parses authentication metrics and alerts administrators to brute-force anomalies in real time.</p>
+          </div>
+          <button class="project-action" onclick="openModal()">Inspect Details &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" style="border-bottom: none;">
+    <div class="container">
+      <div class="contact-container">
+        <h2>CONTACTS</h2>
+        <p>Open for commisions and clients. Feel free to send me an email and we can make your networks more secure!:)</p>
+        <button class="btn btn-green" onclick="openModal()">CLICK ME >:)</button>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <footer>
+      <p>&copy; 2026 ACE PRODUCTIONS. All rights reserved.</p>
+    </footer>
+  </div>
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3>Secure Transmission</h3>
+      <p>Send a message directly to my terminal.</p>
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" required placeholder="Enter name...">
+        </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" required placeholder="Enter email...">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea required placeholder="Enter transmission payload..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-green" style="width: 100%;">Transmit Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('contactModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('contactModal').classList.remove('active');
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      alert('Transmission successful! Thank you for reaching out.');
+      closeModal();
+      event.target.reset();
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('contactModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>
